@@ -1,0 +1,29 @@
+{
+  "name": "restfulapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darioestupinan/restfulapi.git"
+  },
+  "author": "dar1o",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darioestupinan/restfulapi/issues"
+  },
+  "homepage": "https://github.com/darioestupinan/restfulapi#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.2.9",
+    "nodemon": "^1.18.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
