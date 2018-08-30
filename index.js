@@ -1,10 +1,22 @@
 'use strict';
 
 import express from 'express';
+import mongoose from 'mongoose';
 import routes from './src/routes/crmRoutes';
+import bodyParser from 'body-parser';
+import config from './config';
 
 const app = express();
 const PORT = 3000;
+// moongose connection
+mongoose.Promise = global.Promise;
+mongoose.connect(`mongodb://${config.database.url}:${config.database.port}/${config.database.name}`, {
+    useNewUrlParser: true
+});
+
+//body parser
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 routes(app);
 
