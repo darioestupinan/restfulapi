@@ -26,3 +26,5 @@ const ContactSchema = new Schema({
         default: moment()
     }
 });
+
+export default ContactSchema;
