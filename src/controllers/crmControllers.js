@@ -47,6 +47,15 @@ const updateContact = (req, res) => {
         });
 };
 
+const deleteContact = (req,res)=>{
+    Contact.remove({_id: req.params.contactId}, (err) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json({ message: 'Contact deleted'});
+    });
+};
+
 function parseToObjectId(contactId) {
     if (contactId) {
         return Types.ObjectId(contactId);
@@ -57,5 +66,6 @@ export {
     addNewContact,
     getContacts,
     getContactById,
-    updateContact
+    updateContact,
+    deleteContact
 };
