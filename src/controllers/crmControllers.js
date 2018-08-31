@@ -15,4 +15,16 @@ const addNewContact = (req, res) => {
     });
 };
 
-export default addNewContact;
+const getContacts = (req,res) => {
+    Contact.find({}, (err, contact) => {
+        if (err){
+            res.send(err);
+        }
+        res.json(contact);
+    });
+};
+
+export  {
+    addNewContact,
+    getContacts
+};
