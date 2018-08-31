@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { Mongoose, Types } from 'mongoose';
 import ContactSchema from "../models/crmModel";
 
 
@@ -24,7 +24,24 @@ const getContacts = (req,res) => {
     });
 };
 
+const getContactById = (req,res) => {
+    var objectId = parseToObjectId(req.params.contactId);
+    Contact.findById(objectId, (err, contact) => {
+        if (err){
+            res.send(err);
+        }
+        res.json(contact);
+    });
+};
+
+function parseToObjectId(contactId){
+    if(contactId){
+        return Types.ObjectId(contactId);
+    }
+}
+
 export  {
     addNewContact,
-    getContacts
+    getContacts,
+    getContactById
 };
