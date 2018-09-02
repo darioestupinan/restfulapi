@@ -20,6 +20,9 @@ app.use(bodyParser.json());
 
 routes(app);
 
+//for serving static files
+app.use(express.static('public/images'));
+
 app.get('/', (req, res) => {
    res.send(`node and express server are running in port ${PORT}`);
 });
